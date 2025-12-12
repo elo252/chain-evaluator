@@ -51,16 +51,10 @@ Chain Comparison Mode:
 INSTALLATION
 -------------------------------------------------------------------------
 
-Basic Install:
-  pip install reasoning-evaluator
+!git clone https://github.com/elo252/chain-evaluator.git
+%cd chain-evaluator
+!pip install -e .[dev,semantic]
 
-With Semantic Features (Recommended):
-  pip install reasoning-evaluator[semantic]
-
-Development Install:
-  git clone https://github.com/elo252/reasoning-evaluator.git
-  cd reasoning-evaluator
-  pip install -e .[dev,semantic]
 
 -------------------------------------------------------------------------
 QUICK START
