@@ -1,75 +1,70 @@
-Reasoning Evaluator
-
-A comprehensive 12-dimension reasoning question evaluator with semantic,
-structural, and ground-truth–aligned analysis.
-Designed to evaluate, score, and compare multi-step reasoning chains with
-expert-level rigor.
-
+Chain Evaluator
+A comprehensive 12-dimension reasoning chain evaluator with semantic, structural, and ground-truth–aligned analysis. Designed to evaluate, score, and compare multi-step reasoning chains with expert-level rigor.
 Developed by: Dhruv Gada
 Email: dhruv_gada@brown.edu
-GitHub: https://github.com/elo252
+GitHub: https://github.com/elo252/chain-evaluator
 
--------------------------------------------------------------------------
-FEATURES
--------------------------------------------------------------------------
-
-12-Dimension Evaluation:
+Features
+12-Dimension Question Evaluation
 Each question is analyzed across:
-- Clarity
-- Specificity
-- Contextfulness
-- Necessity
-- Progression
-- Non-Repetition
-- Answerability
-- Structural Coherence
-- Semantic Coherence
-- Diagnostic Quality
-- Neutrality
-- Semantic Relevance
 
-Expert Evaluation Architecture:
-- Hybrid heuristic + semantic + NLI scoring
-- Ground-truth anchored necessity and progression analysis
-- Fact extraction + redundancy detection
-- Role-based structural flow validation
+Clarity – How understandable is the question?
+Specificity – Is the question precise and focused?
+Contextfulness – Does it leverage available context?
+Necessity – Is it essential to solving the problem?
+Progression – Does it advance the reasoning chain?
+Non-Repetition – Avoids redundancy with previous questions
+Answerability – Can it be answered with given information?
+Structural Coherence – Logical flow within the chain
+Semantic Coherence – Meaningful connections between questions
+Diagnostic Quality – Ability to identify critical information
+Neutrality – Unbiased and objective formulation
+Semantic Relevance – Direct relevance to the problem
 
-Visualizations:
-- Heatmaps
-- Radar plots
-- Progression charts
-- Cross-chain comparison visuals
+Expert Evaluation Architecture
 
-Chain Comparison Mode:
-- Compare Chain A vs Chain B
-- Good vs Weak chain analysis
-- Full dimension breakdown
-- Statistical significance testing
-- Automatic result visualizations
+Hybrid heuristic + semantic + NLI scoring
+Ground-truth anchored necessity & progression scoring
+Fact extraction + redundancy detection
+Chain-of-thought structural flow analysis
 
--------------------------------------------------------------------------
-INSTALLATION
--------------------------------------------------------------------------
+Visualizations
 
-!git clone https://github.com/elo252/chain-evaluator.git
-%cd chain-evaluator
-!pip install -e .[dev,semantic]
+Heatmaps
+Radar plots
+Progression charts
+Chain-vs-Chain comparison visualizations
+
+Chain Comparison Mode
+
+Compare Chain A vs Chain B
+Good vs Weak chain analysis
+Dimension breakdown
+Coverage & necessity analysis
+Statistical significance testing
+Automatic visual results
 
 
--------------------------------------------------------------------------
-QUICK START
--------------------------------------------------------------------------
+Installation
+Colab / Local Development
+bashgit clone https://github.com/elo252/chain-evaluator.git
+cd chain-evaluator
+pip install -e .[dev,semantic]
+If extras fail (Colab sometimes breaks extras):
+bashpip install -e .
+pip install sentence-transformers transformers torch matplotlib seaborn pandas scipy
 
-Example:
+Quick Start
+pythonfrom chain_evaluator import ReasoningQuestion, ReasoningChain, FullEvaluator
 
-from reasoning_evaluator import ReasoningQuestion, ReasoningChain, FullEvaluator
-
+# Create a reasoning question
 question = ReasoningQuestion(
     text="What is the total cost of the series movies?",
     step_number=1,
     context="There are 600 movies, with 1/3 in series..."
 )
 
+# Create a reasoning chain
 chain = ReasoningChain(
     problem="Calculate total movie costs",
     questions=[question],
@@ -78,24 +73,19 @@ chain = ReasoningChain(
     chain_type="good"
 )
 
+# Evaluate the chain
 evaluator = FullEvaluator(use_semantic_model=True)
 report = evaluator.evaluate_chain(chain, save_dir="results")
 
--------------------------------------------------------------------------
-CLI USAGE
--------------------------------------------------------------------------
-
+CLI Usage
 Evaluate a dataset:
-  reasoning-eval evaluate dataset.json --output results/
-
+bashreasoning-eval evaluate dataset.json --output results/
 Compare chains:
-  reasoning-eval compare dataset.json --output comparisons/
+bashreasoning-eval compare dataset.json --output comparisons/
+(If CLI does not work, please open an issue — easy fix.)
 
--------------------------------------------------------------------------
-DATASET FORMAT
--------------------------------------------------------------------------
-
-[
+Dataset Format
+json[
   {
     "problem_id": "problem_0",
     "ground_truth": "Step-by-step ground truth reasoning...",
@@ -110,73 +100,62 @@ DATASET FORMAT
   }
 ]
 
--------------------------------------------------------------------------
-ADVANCED USAGE
--------------------------------------------------------------------------
+Advanced Usage
+Custom Weights
+pythonevaluator.final_weights["necessity"] = 0.20
+Chain Comparison
+pythonfrom chain_evaluator import ChainComparator
 
-Custom Weights:
-
-evaluator.final_weights["necessity"] = 0.20
-
-Chain Comparison:
-
-from reasoning_evaluator import ChainComparator
-ChainComparator.compare_chains(good_chains, weak_chains, save_dir="comparison_results")
-
-Visualizations:
-
-evaluator._plot_chain_heatmap(chain, "heatmap.png")
+ChainComparator.compare_chains(
+    good_chains, 
+    weak_chains, 
+    save_dir="comparison_results"
+)
+Generate Visualizations
+pythonevaluator._plot_chain_heatmap(chain, "heatmap.png")
 evaluator._plot_chain_radar(chain, "radar.png")
 evaluator._plot_progression_chart(chain, "progression.png")
 
--------------------------------------------------------------------------
-OUTPUT FILES
--------------------------------------------------------------------------
+Output Files
 
-- evaluation_report.json
-- dimension_heatmap.png
-- dimension_radar.png
-- progression.png
-- comparisons/ folder with cross-chain visualizations
+evaluation_report.json
+dimension_heatmap.png
+dimension_radar.png
+progression.png
+comparisons/ directory for chain comparisons
 
--------------------------------------------------------------------------
-REQUIREMENTS
--------------------------------------------------------------------------
 
-Core:
-- numpy
-- scipy
-- pandas
-- matplotlib
-- seaborn
+Requirements
+Core Dependencies
 
-Semantic (optional):
-- torch
-- transformers
-- sentence-transformers
-- spacy
+numpy
+scipy
+pandas
+matplotlib
+seaborn
 
--------------------------------------------------------------------------
-CITATION
--------------------------------------------------------------------------
+Semantic (Optional)
 
-@software{reasoning_evaluator,
-  title={Reasoning Evaluator: 12-Dimension Question Quality Assessment},
+torch
+transformers
+sentence-transformers
+spacy
+
+
+Citation
+bibtex@software{chain_evaluator,
+  title={Chain Evaluator: 12-Dimension Reasoning Chain Quality Assessment},
   author={Gada, Dhruv},
   year={2025},
-  url={https://github.com/elo252/reasoning-evaluator}
+  url={https://github.com/elo252/chain-evaluator}
 }
 
--------------------------------------------------------------------------
-CONTRIBUTING
--------------------------------------------------------------------------
-
+Contributing
 Pull requests and issues welcome at:
-https://github.com/elo252/reasoning-evaluator/issues
+https://github.com/elo252/chain-evaluator/issues
 
--------------------------------------------------------------------------
-SUPPORT
--------------------------------------------------------------------------
-
+Support
 Email: dhruv_gada@brown.edu
 
+License
+MIT License (or specify your license)
