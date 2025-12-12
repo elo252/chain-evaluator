@@ -1,54 +1,81 @@
-# Reasoning Evaluator
+Reasoning Evaluator
 
-A comprehensive 12-dimension reasoning question evaluator with semantic analysis capabilities.
+A comprehensive 12-dimension reasoning question evaluator with semantic,
+structural, and ground-truth–aligned analysis.
+Designed to evaluate, score, and compare multi-step reasoning chains with
+expert-level rigor.
 
-## Features
+Developed by: Dhruv Gada
+Email: dhruv_gada@brown.edu
+GitHub: https://github.com/elo252
 
-- **12-Dimension Evaluation**: Analyzes questions across clarity, specificity, contextfulness, necessity, progression, non-repetition, answerability, structural coherence, semantic coherence, diagnostic quality, neutrality, and semantic relevance
-- **Hybrid Scoring**: Combines heuristic and scientific (MLM/semantic) approaches using agreement-based weighting
-- **Visualizations**: Generates heatmaps, radar plots, and progression charts
-- **Chain Comparison**: Compare good vs weak reasoning chains
-- **Extensible**: Easy to integrate into your own workflows
+-------------------------------------------------------------------------
+FEATURES
+-------------------------------------------------------------------------
 
-## Installation
+12-Dimension Evaluation:
+Each question is analyzed across:
+- Clarity
+- Specificity
+- Contextfulness
+- Necessity
+- Progression
+- Non-Repetition
+- Answerability
+- Structural Coherence
+- Semantic Coherence
+- Diagnostic Quality
+- Neutrality
+- Semantic Relevance
 
-### Basic Installation
+Expert Evaluation Architecture:
+- Hybrid heuristic + semantic + NLI scoring
+- Ground-truth anchored necessity and progression analysis
+- Fact extraction + redundancy detection
+- Role-based structural flow validation
 
-```bash
-pip install reasoning-evaluator
-```
+Visualizations:
+- Heatmaps
+- Radar plots
+- Progression charts
+- Cross-chain comparison visuals
 
-### With Semantic Analysis (Recommended)
+Chain Comparison Mode:
+- Compare Chain A vs Chain B
+- Good vs Weak chain analysis
+- Full dimension breakdown
+- Statistical significance testing
+- Automatic result visualizations
 
-For full semantic and MLM-based features:
+-------------------------------------------------------------------------
+INSTALLATION
+-------------------------------------------------------------------------
 
-```bash
-pip install reasoning-evaluator[semantic]
-```
+Basic Install:
+  pip install reasoning-evaluator
 
-### Development Installation
+With Semantic Features (Recommended):
+  pip install reasoning-evaluator[semantic]
 
-```bash
-git clone https://github.com/yourusername/reasoning-evaluator.git
-cd reasoning-evaluator
-pip install -e .[dev,semantic]
-```
+Development Install:
+  git clone https://github.com/elo252/reasoning-evaluator.git
+  cd reasoning-evaluator
+  pip install -e .[dev,semantic]
 
-## Quick Start
+-------------------------------------------------------------------------
+QUICK START
+-------------------------------------------------------------------------
 
-### Basic Usage
+Example:
 
-```python
 from reasoning_evaluator import ReasoningQuestion, ReasoningChain, FullEvaluator
 
-# Create a reasoning question
 question = ReasoningQuestion(
     text="What is the total cost of the series movies?",
     step_number=1,
     context="There are 600 movies, with 1/3 in series..."
 )
 
-# Create a chain
 chain = ReasoningChain(
     problem="Calculate total movie costs",
     questions=[question],
@@ -57,30 +84,27 @@ chain = ReasoningChain(
     chain_type="good"
 )
 
-# Evaluate
 evaluator = FullEvaluator(use_semantic_model=True)
 report = evaluator.evaluate_chain(chain, save_dir="results")
-```
 
-### Using the CLI
+-------------------------------------------------------------------------
+CLI USAGE
+-------------------------------------------------------------------------
 
-```bash
-# Evaluate a dataset
-reasoning-eval evaluate dataset.json --output results/
+Evaluate a dataset:
+  reasoning-eval evaluate dataset.json --output results/
 
-# Compare chains
-reasoning-eval compare dataset.json --output comparisons/
-```
+Compare chains:
+  reasoning-eval compare dataset.json --output comparisons/
 
-### Dataset Format
+-------------------------------------------------------------------------
+DATASET FORMAT
+-------------------------------------------------------------------------
 
-Your JSON dataset should follow this structure:
-
-```json
 [
   {
     "problem_id": "problem_0",
-    "ground_truth": "Solution description...",
+    "ground_truth": "Step-by-step ground truth reasoning...",
     "good_question_chain": [
       "Question 1?",
       "Question 2?"
@@ -91,98 +115,74 @@ Your JSON dataset should follow this structure:
     ]
   }
 ]
-```
 
-## 12 Evaluation Dimensions
+-------------------------------------------------------------------------
+ADVANCED USAGE
+-------------------------------------------------------------------------
 
-1. **Clarity**: Wording precision and absence of ambiguity
-2. **Specificity**: Presence of concrete entities and details
-3. **Contextfulness**: Relevance to previous context
-4. **Necessity**: Whether the question advances reasoning
-5. **Progression**: Smooth complexity/difficulty flow
-6. **Non-Repetition**: Novelty compared to prior questions
-7. **Answerability**: Presence of actionable prompts
-8. **Structural Coherence**: Logical connection to previous steps
-9. **Semantic Coherence**: Semantic similarity to chain context
-10. **Diagnostic**: Verification/checking capability
-11. **Neutrality**: Absence of leading language
-12. **Semantic Relevance**: Alignment with problem context
+Custom Weights:
 
-## Advanced Features
+evaluator.final_weights["necessity"] = 0.20
 
-### Custom Weights
+Chain Comparison:
 
-```python
-evaluator = FullEvaluator()
-evaluator.final_weights = {
-    'clarity': 0.15,
-    'necessity': 0.15,
-    # ... customize other weights
-}
-```
-
-### Chain Comparison
-
-```python
 from reasoning_evaluator import ChainComparator
+ChainComparator.compare_chains(good_chains, weak_chains, save_dir="comparison_results")
 
-comparator = ChainComparator()
-comparator.compare_chains(good_chains, weak_chains, save_dir="comparison_results")
-```
+Visualizations:
 
-### Visualization Only
-
-```python
 evaluator._plot_chain_heatmap(chain, "heatmap.png")
 evaluator._plot_chain_radar(chain, "radar.png")
 evaluator._plot_progression_chart(chain, "progression.png")
-```
 
-## Output Files
+-------------------------------------------------------------------------
+OUTPUT FILES
+-------------------------------------------------------------------------
 
-When you run evaluation with `save_dir`, you'll get:
+- evaluation_report.json
+- dimension_heatmap.png
+- dimension_radar.png
+- progression.png
+- comparisons/ folder with cross-chain visualizations
 
-- `evaluation_report.json`: Detailed scores and diagnostics
-- `dimension_heatmap.png`: Visual heatmap of all dimensions
-- `dimension_radar.png`: Radar plot of average scores
-- `progression.png`: Line chart showing metric progression
-- `comparisons/`: Cross-chain comparison visualizations
+-------------------------------------------------------------------------
+REQUIREMENTS
+-------------------------------------------------------------------------
 
-## Requirements
+Core:
+- numpy
+- scipy
+- pandas
+- matplotlib
+- seaborn
 
-### Core Dependencies
-- numpy >= 1.20.0
-- scipy >= 1.7.0
-- matplotlib >= 3.4.0
-- seaborn >= 0.11.0
-- pandas >= 1.3.0
+Semantic (optional):
+- torch
+- transformers
+- sentence-transformers
+- spacy
 
-### Optional (for semantic features)
-- sentence-transformers >= 2.0.0
-- transformers >= 4.20.0
-- torch >= 1.9.0
+-------------------------------------------------------------------------
+CITATION
+-------------------------------------------------------------------------
 
-## Citation
-
-If you use this in your research, please cite:
-
-```bibtex
 @software{reasoning_evaluator,
   title={Reasoning Evaluator: 12-Dimension Question Quality Assessment},
-  author={Your Name},
+  author={Gada, Dhruv},
   year={2025},
-  url={https://github.com/yourusername/reasoning-evaluator}
+  url={https://github.com/elo252/reasoning-evaluator}
 }
-```
 
-## License
+-------------------------------------------------------------------------
+CONTRIBUTING
+-------------------------------------------------------------------------
 
-MIT License - see LICENSE file for details
+Pull requests and issues welcome at:
+https://github.com/elo252/reasoning-evaluator/issues
 
-## Contributing
+-------------------------------------------------------------------------
+SUPPORT
+-------------------------------------------------------------------------
 
-Contributions welcome! Please open an issue or PR on GitHub.
+Email: dhruv_gada@brown.edu
 
-## Support
-
-For questions or issues, please open a GitHub issue.
