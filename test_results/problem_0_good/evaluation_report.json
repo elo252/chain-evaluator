@@ -1,0 +1,823 @@
+{
+  "chain_info": {
+    "problem_id": "problem_0",
+    "chain_type": "good",
+    "avg_quality": 0.5939641891724797,
+    "coverage_score": 1.0
+  },
+  "question_scores": [
+    {
+      "index": 1,
+      "text": "From the total of 600 movies, how did you compute the number of movies that belong to series, given that a third of the movies are in series?",
+      "scores": {
+        "clarity": 0.836,
+        "specificity": 0.845,
+        "contextfulness": 0.35,
+        "answerability": 0.7,
+        "diagnostic": 0.45,
+        "neutrality": 0.14,
+        "semantic_relevance": 0.802,
+        "structural_coherence": 1.0,
+        "semantic_coherence": 0.5,
+        "necessity": 0.168,
+        "progression": 0.949,
+        "non_repetition": 1.0,
+        "overall": 0.669,
+        "confidence": 0.82
+      },
+      "diagnostics": {
+        "clarity": {
+          "word_count": 28,
+          "vague_count": 1,
+          "math_count": 1,
+          "heuristic_score": 0.75,
+          "mlm_entropy": 1.5533895449442487,
+          "mlm_clarity": 0.8446610455055752,
+          "agreement": 0.9053389544944248,
+          "weight_heuristic": 0.09466104550557519,
+          "weight_mlm": 0.9053389544944248,
+          "final_source": "agreement_hybrid"
+        },
+        "specificity": {
+          "has_number": true,
+          "has_var": true,
+          "rare_prop": 0.0,
+          "heuristic_score": 0.8500000000000001,
+          "mlm_entropy": 1.5533895449442487,
+          "mlm_specificity": 0.8446610455055752,
+          "agreement": 0.9946610455055751,
+          "weight_heuristic": 0.005338954494424897,
+          "weight_scientific": 0.9946610455055751,
+          "final_source": "agreement_hybrid"
+        },
+        "context": {
+          "overlap": 7,
+          "q_tokens": 20,
+          "ctx_tokens": 34
+        },
+        "answerability": {
+          "has_wh": false,
+          "has_action": true
+        },
+        "diagnostic": {
+          "matched": [
+            "(why|how) (does|did|can)",
+            "why_how"
+          ]
+        },
+        "neutrality": {
+          "hits": [
+            "\\d+.*\\?$"
+          ],
+          "length_factor": 0.2
+        },
+        "struct_diag": {
+          "no_previous": true
+        },
+        "sem_diag": {
+          "no_previous": true,
+          "base_avg_sim": 0.5,
+          "curvature_score": null,
+          "final_source": "base_only"
+        },
+        "non_repetition": {
+          "first": true
+        },
+        "necessity": {
+          "sim_prev_next": 0.0,
+          "sim_prev_mid": 0.0,
+          "sim_mid_next": 0.8065438866615295,
+          "gap_with_mid": 0.0,
+          "gap_without_mid": 0.0,
+          "gap_reduction": 0.0,
+          "novelty": 1.0,
+          "complexity": 0.44,
+          "max_earlier_sim": 0.0,
+          "heuristic": 0.41,
+          "agreement": 0.5900000000000001,
+          "weight_heuristic": 0.4099999999999999,
+          "weight_scientific": 0.5900000000000001,
+          "final_source": "agreement_hybrid"
+        }
+      },
+      "explanation": "Not strongly necessary: may be optional or redundant. Clear wording. Potentially leading or suggests answers. Confidence: 0.82."
+    },
+    {
+      "index": 2,
+      "text": "Once you determined how many movies are in series, how did you translate the statement about series costing 60% of the normal price into a per-movie cost and then into a total cost for all series movies?",
+      "scores": {
+        "clarity": 0.846,
+        "specificity": 0.814,
+        "contextfulness": 0.414,
+        "answerability": 0.7,
+        "diagnostic": 0.45,
+        "neutrality": 0.28,
+        "semantic_relevance": 0.858,
+        "structural_coherence": 0.04,
+        "semantic_coherence": 0.807,
+        "necessity": 0.041,
+        "progression": 0.887,
+        "non_repetition": 0.077,
+        "overall": 0.524,
+        "confidence": 0.804
+      },
+      "diagnostics": {
+        "clarity": {
+          "word_count": 37,
+          "vague_count": 0,
+          "math_count": 1,
+          "heuristic_score": 1.0,
+          "mlm_entropy": 1.9017795797969614,
+          "mlm_clarity": 0.8098220420203038,
+          "agreement": 0.8098220420203038,
+          "weight_heuristic": 0.19017795797969617,
+          "weight_mlm": 0.8098220420203038,
+          "final_source": "agreement_hybrid"
+        },
+        "specificity": {
+          "has_number": true,
+          "has_var": true,
+          "rare_prop": 0.14285714285714285,
+          "heuristic_score": 0.8714285714285716,
+          "mlm_entropy": 1.9017795797969614,
+          "mlm_specificity": 0.8098220420203038,
+          "agreement": 0.9383934705917323,
+          "weight_heuristic": 0.06160652940826772,
+          "weight_scientific": 0.9383934705917323,
+          "final_source": "agreement_hybrid"
+        },
+        "context": {
+          "overlap": 12,
+          "q_tokens": 29,
+          "ctx_tokens": 48
+        },
+        "answerability": {
+          "has_wh": false,
+          "has_action": true
+        },
+        "diagnostic": {
+          "matched": [
+            "(why|how) (does|did|can)",
+            "why_how"
+          ]
+        },
+        "neutrality": {
+          "hits": [
+            "\\d+.*\\?$"
+          ],
+          "length_factor": 0.4
+        },
+        "struct_diag": {
+          "new_refs": [
+            "and",
+            "all",
+            "determined",
+            "costing",
+            "then"
+          ],
+          "connective": false,
+          "length_factor": 0.2
+        },
+        "sem_diag": {
+          "base_prev_sims": [
+            0.8065438866615295
+          ],
+          "base_avg_sim": 0.8065438866615295,
+          "curvature_score": null,
+          "final_source": "base_only"
+        },
+        "non_repetition": {
+          "max_prev_sim": 0.8065438866615295,
+          "length_factor": 0.4
+        },
+        "necessity": {
+          "sim_prev_next": 0.8255984783172607,
+          "sim_prev_mid": 0.8065438866615295,
+          "sim_mid_next": 0.8058635294437408,
+          "gap_with_mid": 0.8062037080526352,
+          "gap_without_mid": 0.8255984783172607,
+          "gap_reduction": 0.0,
+          "novelty": 0.19345611333847046,
+          "complexity": 0.5809523809523809,
+          "max_earlier_sim": 0.8065438866615295,
+          "heuristic": 0.20327492923963636,
+          "agreement": 0.7967250707603637,
+          "weight_heuristic": 0.2032749292396363,
+          "weight_scientific": 0.7967250707603637,
+          "final_source": "agreement_hybrid"
+        }
+      },
+      "explanation": "Not strongly necessary: may be optional or redundant. Clear wording. Repeats prior content. Potentially leading or suggests answers. Confidence: 0.80."
+    },
+    {
+      "index": 3,
+      "text": "After removing the series movies from the total, how many movies remain, and how did you apply the 40% figure to find how many of these remaining movies are older $5 movies?",
+      "scores": {
+        "clarity": 0.79,
+        "specificity": 0.797,
+        "contextfulness": 0.583,
+        "answerability": 0.7,
+        "diagnostic": 0.45,
+        "neutrality": 0.42,
+        "semantic_relevance": 0.812,
+        "structural_coherence": 0.14,
+        "semantic_coherence": 0.85,
+        "necessity": 0.025,
+        "progression": 0.9,
+        "non_repetition": 0.105,
+        "overall": 0.549,
+        "confidence": 0.815
+      },
+      "diagnostics": {
+        "clarity": {
+          "word_count": 32,
+          "vague_count": 1,
+          "math_count": 1,
+          "heuristic_score": 0.75,
+          "mlm_entropy": 2.0859547877130478,
+          "mlm_clarity": 0.7914045212286952,
+          "agreement": 0.9585954787713048,
+          "weight_heuristic": 0.0414045212286952,
+          "weight_mlm": 0.9585954787713048,
+          "final_source": "agreement_hybrid"
+        },
+        "specificity": {
+          "has_number": true,
+          "has_var": true,
+          "rare_prop": 0.1111111111111111,
+          "heuristic_score": 0.8666666666666668,
+          "mlm_entropy": 2.0859547877130478,
+          "mlm_specificity": 0.7914045212286952,
+          "agreement": 0.9247378545620284,
+          "weight_heuristic": 0.0752621454379716,
+          "weight_scientific": 0.9247378545620284,
+          "final_source": "agreement_hybrid"
+        },
+        "context": {
+          "overlap": 14,
+          "q_tokens": 24,
+          "ctx_tokens": 66
+        },
+        "answerability": {
+          "has_wh": false,
+          "has_action": true
+        },
+        "diagnostic": {
+          "matched": [
+            "(why|how) (does|did|can)",
+            "why_how"
+          ]
+        },
+        "neutrality": {
+          "hits": [
+            "\\d+.*\\?$"
+          ],
+          "length_factor": 0.6
+        },
+        "struct_diag": {
+          "new_refs": [
+            "apply",
+            "find",
+            "figure",
+            "older",
+            "remain"
+          ],
+          "connective": true,
+          "length_factor": 0.4
+        },
+        "sem_diag": {
+          "base_prev_sims": [
+            0.8255984783172607,
+            0.8058635294437408
+          ],
+          "base_avg_sim": 0.8157310038805008,
+          "curvature_sim_mid": 0.703126072883606,
+          "curvature_score": 0.851563036441803,
+          "agreement": 0.9641679674386978,
+          "weight_base": 0.035832032561302185,
+          "weight_curvature": 0.9641679674386978,
+          "final_source": "agreement_hybrid"
+        },
+        "non_repetition": {
+          "max_prev_sim": 0.8255984783172607,
+          "length_factor": 0.6
+        },
+        "necessity": {
+          "sim_prev_next": 0.8597654104232788,
+          "sim_prev_mid": 0.8058635294437408,
+          "sim_mid_next": 0.8497103452682495,
+          "gap_with_mid": 0.8277869373559952,
+          "gap_without_mid": 0.8597654104232788,
+          "gap_reduction": 0.0,
+          "novelty": 0.17440152168273926,
+          "complexity": 0.42777777777777776,
+          "max_earlier_sim": 0.8255984783172607,
+          "heuristic": 0.1592649009492662,
+          "agreement": 0.8407350990507338,
+          "weight_heuristic": 0.15926490094926615,
+          "weight_scientific": 0.8407350990507338,
+          "final_source": "agreement_hybrid"
+        }
+      },
+      "explanation": "Not strongly necessary: may be optional or redundant. Clear wording. Repeats prior content. Potentially leading or suggests answers. Confidence: 0.82."
+    },
+    {
+      "index": 4,
+      "text": "How did you determine how many movies were neither in series nor older, and what unit price did you apply to compute their total cost?",
+      "scores": {
+        "clarity": 0.856,
+        "specificity": 0.779,
+        "contextfulness": 0.773,
+        "answerability": 1.0,
+        "diagnostic": 0.45,
+        "neutrality": 0.8,
+        "semantic_relevance": 0.846,
+        "structural_coherence": 0.12,
+        "semantic_coherence": 0.894,
+        "necessity": 0.059,
+        "progression": 0.928,
+        "non_repetition": 0.112,
+        "overall": 0.627,
+        "confidence": 0.797
+      },
+      "diagnostics": {
+        "clarity": {
+          "word_count": 25,
+          "vague_count": 0,
+          "math_count": 1,
+          "heuristic_score": 1.0,
+          "mlm_entropy": 1.7476106280529942,
+          "mlm_clarity": 0.8252389371947007,
+          "agreement": 0.8252389371947007,
+          "weight_heuristic": 0.17476106280529935,
+          "weight_mlm": 0.8252389371947007,
+          "final_source": "agreement_hybrid"
+        },
+        "specificity": {
+          "has_number": false,
+          "has_var": true,
+          "rare_prop": 0.06666666666666667,
+          "heuristic_score": 0.6100000000000001,
+          "mlm_entropy": 1.7476106280529942,
+          "mlm_specificity": 0.8252389371947007,
+          "agreement": 0.7847610628052994,
+          "weight_heuristic": 0.21523893719470055,
+          "weight_scientific": 0.7847610628052994,
+          "final_source": "agreement_hybrid"
+        },
+        "context": {
+          "overlap": 17,
+          "q_tokens": 22,
+          "ctx_tokens": 77
+        },
+        "answerability": {
+          "has_wh": true,
+          "has_action": true
+        },
+        "diagnostic": {
+          "matched": [
+            "(why|how) (does|did|can)",
+            "why_how"
+          ]
+        },
+        "neutrality": {
+          "hits": [],
+          "length_factor": 0.8
+        },
+        "struct_diag": {
+          "new_refs": [
+            "in",
+            "neither",
+            "cost",
+            "nor",
+            "determine"
+          ],
+          "connective": false,
+          "length_factor": 0.6
+        },
+        "sem_diag": {
+          "base_prev_sims": [
+            0.8597654104232788,
+            0.8497103452682495
+          ],
+          "base_avg_sim": 0.8547378778457642,
+          "curvature_sim_mid": 0.7903269529342651,
+          "curvature_score": 0.8951634764671326,
+          "agreement": 0.9595744013786316,
+          "weight_base": 0.04042559862136841,
+          "weight_curvature": 0.9595744013786316,
+          "final_source": "agreement_hybrid"
+        },
+        "non_repetition": {
+          "max_prev_sim": 0.8597654104232788,
+          "length_factor": 0.8
+        },
+        "necessity": {
+          "sim_prev_next": 0.8242937624454498,
+          "sim_prev_mid": 0.8497103452682495,
+          "sim_mid_next": 0.9015701115131378,
+          "gap_with_mid": 0.8756402283906937,
+          "gap_without_mid": 0.8242937624454498,
+          "gap_reduction": 0.051346465945243835,
+          "novelty": 0.1402345895767212,
+          "complexity": 0.2983333333333333,
+          "max_earlier_sim": 0.8597654104232788,
+          "heuristic": 0.1397596198817094,
+          "agreement": 0.9115868460635345,
+          "weight_heuristic": 0.08841315393646554,
+          "weight_scientific": 0.9115868460635345,
+          "final_source": "agreement_hybrid"
+        }
+      },
+      "explanation": "Not strongly necessary: may be optional or redundant. Clear wording. Repeats prior content. Confidence: 0.80."
+    },
+    {
+      "index": 5,
+      "text": "When you combined the three partial costs (series, older, and remaining normal-price movies), what total did you get, and how did you verify that the total number of movies accounted for matches the original 600?",
+      "scores": {
+        "clarity": 0.796,
+        "specificity": 0.805,
+        "contextfulness": 0.643,
+        "answerability": 0.65,
+        "diagnostic": 0.7,
+        "neutrality": 0.7,
+        "semantic_relevance": 0.869,
+        "structural_coherence": 0.16,
+        "semantic_coherence": 0.893,
+        "necessity": 0.018,
+        "progression": 0.97,
+        "non_repetition": 0.098,
+        "overall": 0.601,
+        "confidence": 0.796
+      },
+      "diagnostics": {
+        "clarity": {
+          "word_count": 35,
+          "vague_count": 1,
+          "math_count": 1,
+          "heuristic_score": 0.75,
+          "mlm_entropy": 2.0150132486676076,
+          "mlm_clarity": 0.7984986751332392,
+          "agreement": 0.9515013248667608,
+          "weight_heuristic": 0.048498675133239244,
+          "weight_mlm": 0.9515013248667608,
+          "final_source": "agreement_hybrid"
+        },
+        "specificity": {
+          "has_number": true,
+          "has_var": true,
+          "rare_prop": 0.19047619047619047,
+          "heuristic_score": 0.8785714285714287,
+          "mlm_entropy": 2.0150132486676076,
+          "mlm_specificity": 0.7984986751332392,
+          "agreement": 0.9199272465618106,
+          "weight_heuristic": 0.08007275343818943,
+          "weight_scientific": 0.9199272465618106,
+          "final_source": "agreement_hybrid"
+        },
+        "context": {
+          "overlap": 18,
+          "q_tokens": 28,
+          "ctx_tokens": 83
+        },
+        "answerability": {
+          "has_wh": true,
+          "has_action": false
+        },
+        "diagnostic": {
+          "matched": [
+            "(verify|check|confirm|test|validate)",
+            "(why|how) (does|did|can)",
+            "why_how"
+          ]
+        },
+        "neutrality": {
+          "hits": [
+            "\\d+.*\\?$"
+          ],
+          "length_factor": 1.0
+        },
+        "struct_diag": {
+          "new_refs": [
+            "matches",
+            "three",
+            "combined",
+            "verify",
+            "when"
+          ],
+          "connective": false,
+          "length_factor": 0.8
+        },
+        "sem_diag": {
+          "base_prev_sims": [
+            0.8242937624454498,
+            0.9015701115131378
+          ],
+          "base_avg_sim": 0.8629319369792938,
+          "curvature_sim_mid": 0.7874441146850586,
+          "curvature_score": 0.8937220573425293,
+          "agreement": 0.9692098796367645,
+          "weight_base": 0.030790120363235474,
+          "weight_curvature": 0.9692098796367645,
+          "final_source": "agreement_hybrid"
+        },
+        "non_repetition": {
+          "max_prev_sim": 0.9015701115131378,
+          "length_factor": 1.0
+        },
+        "necessity": {
+          "sim_prev_next": 0.0,
+          "sim_prev_mid": 0.9015701115131378,
+          "sim_mid_next": 0.0,
+          "gap_with_mid": 0.0,
+          "gap_without_mid": 0.0,
+          "gap_reduction": 0.0,
+          "novelty": 0.09842988848686218,
+          "complexity": 0.419047619047619,
+          "max_earlier_sim": 0.9015701115131378,
+          "heuristic": 0.1342908713079634,
+          "agreement": 0.8657091286920366,
+          "weight_heuristic": 0.13429087130796336,
+          "weight_scientific": 0.8657091286920366,
+          "final_source": "agreement_hybrid"
+        }
+      },
+      "explanation": "Not strongly necessary: may be optional or redundant. Clear wording. Repeats prior content. Has diagnostic value (verification/why/how). Confidence: 0.80."
+    }
+  ],
+  "diagnostics": {
+    "correlations": {
+      "clarity__specificity": {
+        "rho": -0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "clarity__contextfulness": {
+        "rho": 0.19999999999999998,
+        "p": 0.747060078104662
+      },
+      "clarity__necessity": {
+        "rho": 0.6,
+        "p": 0.28475697986529375
+      },
+      "clarity__progression": {
+        "rho": -0.19999999999999998,
+        "p": 0.747060078104662
+      },
+      "clarity__non_repetition": {
+        "rho": 0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "clarity__answerability": {
+        "rho": 0.6708203932499368,
+        "p": 0.21516994256955005
+      },
+      "clarity__structural_coherence": {
+        "rho": -0.49999999999999994,
+        "p": 0.39100221895577053
+      },
+      "clarity__semantic_coherence": {
+        "rho": 0.19999999999999998,
+        "p": 0.747060078104662
+      },
+      "clarity__diagnostic": {
+        "rho": -0.35355339059327373,
+        "p": 0.5594043441634877
+      },
+      "clarity__neutrality": {
+        "rho": 0.19999999999999998,
+        "p": 0.747060078104662
+      },
+      "clarity__semantic_relevance": {
+        "rho": 0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "specificity__contextfulness": {
+        "rho": -0.8999999999999998,
+        "p": 0.03738607346849875
+      },
+      "specificity__necessity": {
+        "rho": 0.3,
+        "p": 0.6238376647810728
+      },
+      "specificity__progression": {
+        "rho": 0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "specificity__non_repetition": {
+        "rho": 0.0,
+        "p": 1.0
+      },
+      "specificity__answerability": {
+        "rho": -0.44721359549995787,
+        "p": 0.45018485575210093
+      },
+      "specificity__structural_coherence": {
+        "rho": 0.39999999999999997,
+        "p": 0.5046315754686911
+      },
+      "specificity__semantic_coherence": {
+        "rho": -0.8999999999999998,
+        "p": 0.03738607346849875
+      },
+      "specificity__diagnostic": {
+        "rho": 0.0,
+        "p": 1.0
+      },
+      "specificity__neutrality": {
+        "rho": -0.8999999999999998,
+        "p": 0.03738607346849875
+      },
+      "specificity__semantic_relevance": {
+        "rho": -0.19999999999999998,
+        "p": 0.747060078104662
+      },
+      "contextfulness__necessity": {
+        "rho": -0.39999999999999997,
+        "p": 0.5046315754686911
+      },
+      "contextfulness__progression": {
+        "rho": 0.19999999999999998,
+        "p": 0.747060078104662
+      },
+      "contextfulness__non_repetition": {
+        "rho": -0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "contextfulness__answerability": {
+        "rho": 0.22360679774997894,
+        "p": 0.7176856442107861
+      },
+      "contextfulness__structural_coherence": {
+        "rho": -0.3,
+        "p": 0.6238376647810728
+      },
+      "contextfulness__semantic_coherence": {
+        "rho": 0.9999999999999999,
+        "p": 1.4042654220543672e-24
+      },
+      "contextfulness__diagnostic": {
+        "rho": 0.35355339059327373,
+        "p": 0.5594043441634877
+      },
+      "contextfulness__neutrality": {
+        "rho": 0.9999999999999999,
+        "p": 1.4042654220543672e-24
+      },
+      "contextfulness__semantic_relevance": {
+        "rho": 0.49999999999999994,
+        "p": 0.39100221895577053
+      },
+      "necessity__progression": {
+        "rho": -0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "necessity__non_repetition": {
+        "rho": 0.7,
+        "p": 0.18812040437418728
+      },
+      "necessity__answerability": {
+        "rho": 0.6708203932499368,
+        "p": 0.21516994256955005
+      },
+      "necessity__structural_coherence": {
+        "rho": 0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "necessity__semantic_coherence": {
+        "rho": -0.39999999999999997,
+        "p": 0.5046315754686911
+      },
+      "necessity__diagnostic": {
+        "rho": -0.7071067811865475,
+        "p": 0.18169011381620928
+      },
+      "necessity__neutrality": {
+        "rho": -0.39999999999999997,
+        "p": 0.5046315754686911
+      },
+      "necessity__semantic_relevance": {
+        "rho": -0.7,
+        "p": 0.18812040437418728
+      },
+      "progression__non_repetition": {
+        "rho": 0.39999999999999997,
+        "p": 0.5046315754686911
+      },
+      "progression__answerability": {
+        "rho": -0.44721359549995787,
+        "p": 0.45018485575210093
+      },
+      "progression__structural_coherence": {
+        "rho": 0.7999999999999999,
+        "p": 0.10408803866182788
+      },
+      "progression__semantic_coherence": {
+        "rho": 0.19999999999999998,
+        "p": 0.747060078104662
+      },
+      "progression__diagnostic": {
+        "rho": 0.7071067811865475,
+        "p": 0.18169011381620928
+      },
+      "progression__neutrality": {
+        "rho": 0.19999999999999998,
+        "p": 0.747060078104662
+      },
+      "progression__semantic_relevance": {
+        "rho": 0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "non_repetition__answerability": {
+        "rho": 0.44721359549995787,
+        "p": 0.45018485575210093
+      },
+      "non_repetition__structural_coherence": {
+        "rho": 0.6,
+        "p": 0.28475697986529375
+      },
+      "non_repetition__semantic_coherence": {
+        "rho": -0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "non_repetition__diagnostic": {
+        "rho": -0.35355339059327373,
+        "p": 0.5594043441634877
+      },
+      "non_repetition__neutrality": {
+        "rho": -0.09999999999999999,
+        "p": 0.8728885715695383
+      },
+      "non_repetition__semantic_relevance": {
+        "rho": -0.7999999999999999,
+        "p": 0.10408803866182788
+      },
+      "answerability__structural_coherence": {
+        "rho": -0.4472135954999579,
+        "p": 0.45018485575210093
+      },
+      "answerability__semantic_coherence": {
+        "rho": 0.22360679774997896,
+        "p": 0.7176856442107861
+      },
+      "answerability__diagnostic": {
+        "rho": -0.7905694150420948,
+        "p": 0.11136715471408383
+      },
+      "answerability__neutrality": {
+        "rho": 0.22360679774997896,
+        "p": 0.7176856442107861
+      },
+      "answerability__semantic_relevance": {
+        "rho": -0.4472135954999579,
+        "p": 0.45018485575210093
+      },
+      "structural_coherence__semantic_coherence": {
+        "rho": -0.3,
+        "p": 0.6238376647810728
+      },
+      "structural_coherence__diagnostic": {
+        "rho": 0.35355339059327373,
+        "p": 0.5594043441634877
+      },
+      "structural_coherence__neutrality": {
+        "rho": -0.3,
+        "p": 0.6238376647810728
+      },
+      "structural_coherence__semantic_relevance": {
+        "rho": -0.39999999999999997,
+        "p": 0.5046315754686911
+      },
+      "semantic_coherence__diagnostic": {
+        "rho": 0.35355339059327373,
+        "p": 0.5594043441634877
+      },
+      "semantic_coherence__neutrality": {
+        "rho": 0.9999999999999999,
+        "p": 1.4042654220543672e-24
+      },
+      "semantic_coherence__semantic_relevance": {
+        "rho": 0.49999999999999994,
+        "p": 0.39100221895577053
+      },
+      "diagnostic__neutrality": {
+        "rho": 0.35355339059327373,
+        "p": 0.5594043441634877
+      },
+      "diagnostic__semantic_relevance": {
+        "rho": 0.7071067811865475,
+        "p": 0.18169011381620928
+      },
+      "neutrality__semantic_relevance": {
+        "rho": 0.49999999999999994,
+        "p": 0.39100221895577053
+      }
+    },
+    "coverage_diag": {
+      "redundancy": 0.0,
+      "coverage_ratio": 1.0,
+      "problem_complexity": 1
+    },
+    "n_questions": 5
+  },
+  "recommendations": []
+}

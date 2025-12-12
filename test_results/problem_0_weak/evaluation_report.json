@@ -1,0 +1,482 @@
+{
+  "chain_info": {
+    "problem_id": "problem_0",
+    "chain_type": "weak",
+    "avg_quality": 0.46955306174794775,
+    "coverage_score": 1.0
+  },
+  "question_scores": [
+    {
+      "index": 1,
+      "text": "Did you separate the movies into series, older, and regular categories before calculating the cost?",
+      "scores": {
+        "clarity": 0.786,
+        "specificity": 0.654,
+        "contextfulness": 0.286,
+        "answerability": 0.35,
+        "diagnostic": 0.0,
+        "neutrality": 0.2,
+        "semantic_relevance": 0.816,
+        "structural_coherence": 1.0,
+        "semantic_coherence": 0.5,
+        "necessity": 0.106,
+        "progression": 0.388,
+        "non_repetition": 1.0,
+        "overall": 0.527,
+        "confidence": 0.804
+      },
+      "diagnostics": {
+        "clarity": {
+          "word_count": 15,
+          "vague_count": 0,
+          "math_count": 0,
+          "heuristic_score": 0.95,
+          "mlm_entropy": 2.5741801725493536,
+          "mlm_clarity": 0.7425819827450646,
+          "agreement": 0.7925819827450646,
+          "weight_heuristic": 0.20741801725493536,
+          "weight_mlm": 0.7925819827450646,
+          "final_source": "agreement_hybrid"
+        },
+        "specificity": {
+          "has_number": false,
+          "has_var": false,
+          "rare_prop": 0.3,
+          "heuristic_score": 0.445,
+          "mlm_entropy": 2.5741801725493536,
+          "mlm_specificity": 0.7425819827450646,
+          "agreement": 0.7024180172549355,
+          "weight_heuristic": 0.29758198274506453,
+          "weight_scientific": 0.7024180172549355,
+          "final_source": "agreement_hybrid"
+        },
+        "context": {
+          "overlap": 4,
+          "q_tokens": 14,
+          "ctx_tokens": 34
+        },
+        "answerability": {
+          "has_wh": false,
+          "has_action": false
+        },
+        "diagnostic": {
+          "matched": []
+        },
+        "neutrality": {
+          "hits": [],
+          "length_factor": 0.2
+        },
+        "struct_diag": {
+          "no_previous": true
+        },
+        "sem_diag": {
+          "no_previous": true,
+          "base_avg_sim": 0.5,
+          "curvature_score": null,
+          "final_source": "base_only"
+        },
+        "non_repetition": {
+          "first": true
+        },
+        "necessity": {
+          "sim_prev_next": 0.0,
+          "sim_prev_mid": 0.0,
+          "sim_mid_next": 0.886485755443573,
+          "gap_with_mid": 0.0,
+          "gap_without_mid": 0.0,
+          "gap_reduction": 0.0,
+          "novelty": 1.0,
+          "complexity": 0.105,
+          "max_earlier_sim": 0.0,
+          "heuristic": 0.32625,
+          "agreement": 0.6737500000000001,
+          "weight_heuristic": 0.32624999999999993,
+          "weight_scientific": 0.6737500000000001,
+          "final_source": "agreement_hybrid"
+        }
+      },
+      "explanation": "Not strongly necessary: may be optional or redundant. Clear wording. Irregular progression (possible abrupt jump or regression). Potentially leading or suggests answers. Confidence: 0.80."
+    },
+    {
+      "index": 2,
+      "text": "Did you multiply the number of movies in each category by the correct price for that category?",
+      "scores": {
+        "clarity": 0.843,
+        "specificity": 0.823,
+        "contextfulness": 0.333,
+        "answerability": 0.35,
+        "diagnostic": 0.0,
+        "neutrality": 0.34,
+        "semantic_relevance": 0.845,
+        "structural_coherence": 0.04,
+        "semantic_coherence": 0.886,
+        "necessity": 0.016,
+        "progression": 0.388,
+        "non_repetition": 0.045,
+        "overall": 0.412,
+        "confidence": 0.796
+      },
+      "diagnostics": {
+        "clarity": {
+          "word_count": 17,
+          "vague_count": 1,
+          "math_count": 0,
+          "heuristic_score": 0.7,
+          "mlm_entropy": 1.272659926773294,
+          "mlm_clarity": 0.8727340073226706,
+          "agreement": 0.8272659926773294,
+          "weight_heuristic": 0.17273400732267064,
+          "weight_mlm": 0.8272659926773294,
+          "final_source": "agreement_hybrid"
+        },
+        "specificity": {
+          "has_number": false,
+          "has_var": true,
+          "rare_prop": 0.3333333333333333,
+          "heuristic_score": 0.6500000000000001,
+          "mlm_entropy": 1.272659926773294,
+          "mlm_specificity": 0.8727340073226706,
+          "agreement": 0.7772659926773295,
+          "weight_heuristic": 0.22273400732267046,
+          "weight_scientific": 0.7772659926773295,
+          "final_source": "agreement_hybrid"
+        },
+        "context": {
+          "overlap": 5,
+          "q_tokens": 15,
+          "ctx_tokens": 45
+        },
+        "answerability": {
+          "has_wh": false,
+          "has_action": false
+        },
+        "diagnostic": {
+          "matched": []
+        },
+        "neutrality": {
+          "hits": [
+            "confirmation_word"
+          ],
+          "length_factor": 0.4
+        },
+        "struct_diag": {
+          "new_refs": [
+            "multiply",
+            "in",
+            "category",
+            "correct",
+            "of"
+          ],
+          "connective": false,
+          "length_factor": 0.2
+        },
+        "sem_diag": {
+          "base_prev_sims": [
+            0.886485755443573
+          ],
+          "base_avg_sim": 0.886485755443573,
+          "curvature_score": null,
+          "final_source": "base_only"
+        },
+        "non_repetition": {
+          "max_prev_sim": 0.886485755443573,
+          "length_factor": 0.4
+        },
+        "necessity": {
+          "sim_prev_next": 0.0,
+          "sim_prev_mid": 0.886485755443573,
+          "sim_mid_next": 0.0,
+          "gap_with_mid": 0.0,
+          "gap_without_mid": 0.0,
+          "gap_reduction": 0.0,
+          "novelty": 0.113514244556427,
+          "complexity": 0.3683333333333333,
+          "max_earlier_sim": 0.886485755443573,
+          "heuristic": 0.12613760670026142,
+          "agreement": 0.8738623932997386,
+          "weight_heuristic": 0.12613760670026142,
+          "weight_scientific": 0.8738623932997386,
+          "final_source": "agreement_hybrid"
+        }
+      },
+      "explanation": "Not strongly necessary: may be optional or redundant. Clear wording. Repeats prior content. Irregular progression (possible abrupt jump or regression). Potentially leading or suggests answers. Confidence: 0.80."
+    }
+  ],
+  "diagnostics": {
+    "correlations": {
+      "clarity__specificity": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "clarity__contextfulness": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "clarity__necessity": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "clarity__progression": {
+        "rho": null,
+        "p": null
+      },
+      "clarity__non_repetition": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "clarity__answerability": {
+        "rho": null,
+        "p": null
+      },
+      "clarity__structural_coherence": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "clarity__semantic_coherence": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "clarity__diagnostic": {
+        "rho": null,
+        "p": null
+      },
+      "clarity__neutrality": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "clarity__semantic_relevance": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "specificity__contextfulness": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "specificity__necessity": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "specificity__progression": {
+        "rho": null,
+        "p": null
+      },
+      "specificity__non_repetition": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "specificity__answerability": {
+        "rho": null,
+        "p": null
+      },
+      "specificity__structural_coherence": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "specificity__semantic_coherence": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "specificity__diagnostic": {
+        "rho": null,
+        "p": null
+      },
+      "specificity__neutrality": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "specificity__semantic_relevance": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "contextfulness__necessity": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "contextfulness__progression": {
+        "rho": null,
+        "p": null
+      },
+      "contextfulness__non_repetition": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "contextfulness__answerability": {
+        "rho": null,
+        "p": null
+      },
+      "contextfulness__structural_coherence": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "contextfulness__semantic_coherence": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "contextfulness__diagnostic": {
+        "rho": null,
+        "p": null
+      },
+      "contextfulness__neutrality": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "contextfulness__semantic_relevance": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "necessity__progression": {
+        "rho": null,
+        "p": null
+      },
+      "necessity__non_repetition": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "necessity__answerability": {
+        "rho": null,
+        "p": null
+      },
+      "necessity__structural_coherence": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "necessity__semantic_coherence": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "necessity__diagnostic": {
+        "rho": null,
+        "p": null
+      },
+      "necessity__neutrality": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "necessity__semantic_relevance": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "progression__non_repetition": {
+        "rho": null,
+        "p": null
+      },
+      "progression__answerability": {
+        "rho": null,
+        "p": null
+      },
+      "progression__structural_coherence": {
+        "rho": null,
+        "p": null
+      },
+      "progression__semantic_coherence": {
+        "rho": null,
+        "p": null
+      },
+      "progression__diagnostic": {
+        "rho": null,
+        "p": null
+      },
+      "progression__neutrality": {
+        "rho": null,
+        "p": null
+      },
+      "progression__semantic_relevance": {
+        "rho": null,
+        "p": null
+      },
+      "non_repetition__answerability": {
+        "rho": null,
+        "p": null
+      },
+      "non_repetition__structural_coherence": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "non_repetition__semantic_coherence": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "non_repetition__diagnostic": {
+        "rho": null,
+        "p": null
+      },
+      "non_repetition__neutrality": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "non_repetition__semantic_relevance": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "answerability__structural_coherence": {
+        "rho": null,
+        "p": null
+      },
+      "answerability__semantic_coherence": {
+        "rho": null,
+        "p": null
+      },
+      "answerability__diagnostic": {
+        "rho": null,
+        "p": null
+      },
+      "answerability__neutrality": {
+        "rho": null,
+        "p": null
+      },
+      "answerability__semantic_relevance": {
+        "rho": null,
+        "p": null
+      },
+      "structural_coherence__semantic_coherence": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "structural_coherence__diagnostic": {
+        "rho": null,
+        "p": null
+      },
+      "structural_coherence__neutrality": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "structural_coherence__semantic_relevance": {
+        "rho": -0.9999999999999999,
+        "p": null
+      },
+      "semantic_coherence__diagnostic": {
+        "rho": null,
+        "p": null
+      },
+      "semantic_coherence__neutrality": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "semantic_coherence__semantic_relevance": {
+        "rho": 0.9999999999999999,
+        "p": null
+      },
+      "diagnostic__neutrality": {
+        "rho": null,
+        "p": null
+      },
+      "diagnostic__semantic_relevance": {
+        "rho": null,
+        "p": null
+      },
+      "neutrality__semantic_relevance": {
+        "rho": 0.9999999999999999,
+        "p": null
+      }
+    },
+    "coverage_diag": {
+      "redundancy": 0.0,
+      "coverage_ratio": 1.0,
+      "problem_complexity": 1
+    },
+    "n_questions": 2
+  },
+  "recommendations": [
+    "Chain avg quality < 0.5 \u2014 inspect low scoring questions."
+  ]
+}
